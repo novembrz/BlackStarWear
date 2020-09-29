@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2253B1C25233601008AA0DC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2253B1B25233601008AA0DC /* ListViewController.swift */; };
+		C2253B242523532E008AA0DC /* ShopingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2253B232523532E008AA0DC /* ShopingCartController.swift */; };
+		C2253B29252354BA008AA0DC /* ShopingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2253B28252354BA008AA0DC /* ShopingCell.swift */; };
+		C22685192520BF10004BCFF2 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22685182520BF10004BCFF2 /* CategoryController.swift */; };
+		C2270FCA2520BB5600A6A659 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2270FC92520BB5600A6A659 /* CategoryCell.swift */; };
+		C228F9132522045100A37E72 /* productData.json in Resources */ = {isa = PBXBuildFile; fileRef = C228F9122522045100A37E72 /* productData.json */; };
+		C228F91F252208D600A37E72 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C228F91E252208D600A37E72 /* ProductCell.swift */; };
+		C23C6A312520F629002C8088 /* ClothingTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C6A302520F629002C8088 /* ClothingTypeController.swift */; };
+		C23C6A412520FD64002C8088 /* ClothingTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C6A402520FD64002C8088 /* ClothingTypeCell.swift */; };
+		C23C6A4625210504002C8088 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C6A4525210504002C8088 /* ProductModel.swift */; };
+		C23C6A5125210B32002C8088 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C6A5025210B32002C8088 /* UIColor.swift */; };
+		C23C6A5625210D60002C8088 /* ProductCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C6A5525210D60002C8088 /* ProductCartController.swift */; };
 		C269C7FF251E86810051EAB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269C7FE251E86810051EAB2 /* AppDelegate.swift */; };
 		C269C801251E86810051EAB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269C800251E86810051EAB2 /* SceneDelegate.swift */; };
-		C269C803251E86810051EAB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269C802251E86810051EAB2 /* ViewController.swift */; };
 		C269C806251E86810051EAB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C269C804251E86810051EAB2 /* Main.storyboard */; };
 		C269C809251E86810051EAB2 /* BlackStarWear.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C269C807251E86810051EAB2 /* BlackStarWear.xcdatamodeld */; };
 		C269C80B251E86820051EAB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C269C80A251E86820051EAB2 /* Assets.xcassets */; };
@@ -36,10 +47,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C2253B1B25233601008AA0DC /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		C2253B232523532E008AA0DC /* ShopingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopingCartController.swift; sourceTree = "<group>"; };
+		C2253B28252354BA008AA0DC /* ShopingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopingCell.swift; sourceTree = "<group>"; };
+		C22685182520BF10004BCFF2 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		C2270FC92520BB5600A6A659 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		C228F9122522045100A37E72 /* productData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = productData.json; path = BlackStarWear/productData.json; sourceTree = "<group>"; };
+		C228F91E252208D600A37E72 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		C23C6A302520F629002C8088 /* ClothingTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingTypeController.swift; sourceTree = "<group>"; };
+		C23C6A402520FD64002C8088 /* ClothingTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingTypeCell.swift; sourceTree = "<group>"; };
+		C23C6A4525210504002C8088 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		C23C6A5025210B32002C8088 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		C23C6A5525210D60002C8088 /* ProductCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCartController.swift; sourceTree = "<group>"; };
 		C269C7FB251E86810051EAB2 /* BlackStarWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackStarWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C269C7FE251E86810051EAB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C269C800251E86810051EAB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C269C802251E86810051EAB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C269C805251E86810051EAB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C269C808251E86810051EAB2 /* BlackStarWear.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BlackStarWear.xcdatamodel; sourceTree = "<group>"; };
 		C269C80A251E86820051EAB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,10 +100,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C226851D2520BF16004BCFF2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C2270FC92520BB5600A6A659 /* CategoryCell.swift */,
+				C23C6A402520FD64002C8088 /* ClothingTypeCell.swift */,
+				C228F91E252208D600A37E72 /* ProductCell.swift */,
+				C2253B28252354BA008AA0DC /* ShopingCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C2270FD12520BC1900A6A659 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C23C6A4525210504002C8088 /* ProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C2270FD22520BC3000A6A659 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C269C804251E86810051EAB2 /* Main.storyboard */,
+				C269C80C251E86820051EAB2 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2270FD32520BC3600A6A659 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C22685182520BF10004BCFF2 /* CategoryController.swift */,
+				C23C6A302520F629002C8088 /* ClothingTypeController.swift */,
+				C2253B1B25233601008AA0DC /* ListViewController.swift */,
+				C23C6A5525210D60002C8088 /* ProductCartController.swift */,
+				C2253B232523532E008AA0DC /* ShopingCartController.swift */,
+				C226851D2520BF16004BCFF2 /* Cells */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C2270FD42520BC4100A6A659 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				C269C80F251E86820051EAB2 /* Info.plist */,
+				C269C80A251E86820051EAB2 /* Assets.xcassets */,
+				C269C807251E86810051EAB2 /* BlackStarWear.xcdatamodeld */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		C23C6A4F25210B14002C8088 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C23C6A5025210B32002C8088 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C269C7F2251E86800051EAB2 = {
 			isa = PBXGroup;
 			children = (
 				C269C7FD251E86810051EAB2 /* BlackStarWear */,
+				C228F9122522045100A37E72 /* productData.json */,
 				C269C817251E86820051EAB2 /* BlackStarWearTests */,
 				C269C822251E86820051EAB2 /* BlackStarWearUITests */,
 				C269C7FC251E86810051EAB2 /* Products */,
@@ -103,12 +185,11 @@
 			children = (
 				C269C7FE251E86810051EAB2 /* AppDelegate.swift */,
 				C269C800251E86810051EAB2 /* SceneDelegate.swift */,
-				C269C802251E86810051EAB2 /* ViewController.swift */,
-				C269C804251E86810051EAB2 /* Main.storyboard */,
-				C269C80A251E86820051EAB2 /* Assets.xcassets */,
-				C269C80C251E86820051EAB2 /* LaunchScreen.storyboard */,
-				C269C80F251E86820051EAB2 /* Info.plist */,
-				C269C807251E86810051EAB2 /* BlackStarWear.xcdatamodeld */,
+				C2270FD12520BC1900A6A659 /* Model */,
+				C2270FD22520BC3000A6A659 /* View */,
+				C2270FD32520BC3600A6A659 /* Controller */,
+				C23C6A4F25210B14002C8088 /* Extensions */,
+				C2270FD42520BC4100A6A659 /* Supporting files */,
 			);
 			path = BlackStarWear;
 			sourceTree = "<group>";
@@ -237,6 +318,7 @@
 				C269C80E251E86820051EAB2 /* LaunchScreen.storyboard in Resources */,
 				C269C80B251E86820051EAB2 /* Assets.xcassets in Resources */,
 				C269C806251E86810051EAB2 /* Main.storyboard in Resources */,
+				C228F9132522045100A37E72 /* productData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +344,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C269C809251E86810051EAB2 /* BlackStarWear.xcdatamodeld in Sources */,
-				C269C803251E86810051EAB2 /* ViewController.swift in Sources */,
+				C22685192520BF10004BCFF2 /* CategoryController.swift in Sources */,
+				C228F91F252208D600A37E72 /* ProductCell.swift in Sources */,
+				C23C6A5625210D60002C8088 /* ProductCartController.swift in Sources */,
 				C269C7FF251E86810051EAB2 /* AppDelegate.swift in Sources */,
+				C23C6A312520F629002C8088 /* ClothingTypeController.swift in Sources */,
+				C23C6A412520FD64002C8088 /* ClothingTypeCell.swift in Sources */,
 				C269C801251E86810051EAB2 /* SceneDelegate.swift in Sources */,
+				C2270FCA2520BB5600A6A659 /* CategoryCell.swift in Sources */,
+				C2253B242523532E008AA0DC /* ShopingCartController.swift in Sources */,
+				C23C6A4625210504002C8088 /* ProductModel.swift in Sources */,
+				C2253B1C25233601008AA0DC /* ListViewController.swift in Sources */,
+				C2253B29252354BA008AA0DC /* ShopingCell.swift in Sources */,
+				C23C6A5125210B32002C8088 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R367V6SP7Z;
-				INFOPLIST_FILE = BlackStarWear/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BlackStarWear/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,7 +553,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R367V6SP7Z;
-				INFOPLIST_FILE = BlackStarWear/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BlackStarWear/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
