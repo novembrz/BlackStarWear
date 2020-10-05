@@ -23,5 +23,10 @@ class CategoryCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configureCell(model: CategoriesData){
+        categoryLabel.text = model.name
+        
+    }
+    
 
 }

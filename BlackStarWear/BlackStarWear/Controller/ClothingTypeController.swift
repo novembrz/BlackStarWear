@@ -19,6 +19,10 @@ class ClothingTypeController: UIViewController {
         tableView.dataSource = self
     }
     
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        
+    }
+    
 }
 
 extension ClothingTypeController: UITableViewDelegate, UITableViewDataSource {
@@ -30,6 +34,7 @@ extension ClothingTypeController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClothingTypeCell") as! ClothingTypeCell
         
         cell.clothingLabel.text = "\(indexPath.row)"
+    
         
         return cell
     }
