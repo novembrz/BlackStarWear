@@ -26,6 +26,32 @@ class CategoryCell: UITableViewCell {
     func configureCell(model: CategoriesData){
         categoryLabel.text = model.name
         
+        /*
+        DispatchQueue.main.async {
+            NetworkManager.downloadCategoryImage(urlString: model.imageURL) { (image) in
+                self.categoryImageView.image = image
+            }
+        }
+ */
+        
+        /*
+        
+        DispatchQueue.global().async {
+            guard let imageURL = URL(string: model.imageURL) else {return}
+            guard let imageData = try? Data(contentsOf: imageURL) else {return}
+
+            DispatchQueue.main.async {
+                self.categoryImageView.image = UIImage(data: imageData) ?? #imageLiteral(resourceName: "4")
+            }
+        }
+ 
+         */
+        
+        
+    }
+    
+    func configureSubCell(model: Subcategories){
+        categoryLabel.text = model.name
     }
     
 

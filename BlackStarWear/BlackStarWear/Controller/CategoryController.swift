@@ -10,23 +10,38 @@ import UIKit
 class CategoryController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    var categories: [CategoriesData] = []
+    private var categories: [CategoriesData] = []
+    private var subcategories: [Subcategories] = []
+    
+    private var name: String = "BLACK STAR WEAR"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        titleLabel.text = name
         
-        NetworkManager.fetchCategory { (categories) in
-            self.categories = categories
+        tableView.delegate = self
+        tableView.dataSource = self 
+        
+        NetworkManager.fetchCategory { (category) in
+            self.categories = category
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
-        
+    }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if let listVC = segue.destination as? ListViewController, segue.identifier == "ListSegue" {
+            
+        }
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
@@ -41,26 +56,44 @@ class CategoryController: UIViewController {
 extension CategoryController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        
+        if !subcategories.isEmpty {
+            return subcategories.count
+        } else {
+            return categories.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as! CategoryCell
         
-        let cetegory = categories[indexPath.row]
-        cell.configureCell(model: cetegory)
+        if !subcategories.isEmpty {
+            let sub = subcategories[indexPath.row]
+            cell.configureSubCell(model: sub)
+        } else {
+            let category = categories[indexPath.row]
+            cell.configureCell(model: category)
+        }
         
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let category = categories[indexPath.row]
         
-//        courseURL = course.link
-//        courseName = course.name
+        if !category.subcategories.isEmpty {
+            DispatchQueue.main.async {
+                self.name = category.name
+                self.subcategories = category.subcategories
+                self.tableView.reloadData()
+            }
+        } else if !subcategories.isEmpty{
+            performSegue(withIdentifier: "ListSegue", sender: self)
+        }
         
-        performSegue(withIdentifier: "SubcategorySegue", sender: self)
     }
     
     
