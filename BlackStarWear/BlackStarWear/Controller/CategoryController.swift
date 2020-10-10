@@ -11,6 +11,7 @@ class CategoryController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
     
     private var categories: [CategoriesData] = []
     private var subcategories: [Subcategories] = []
@@ -24,7 +25,10 @@ class CategoryController: UIViewController {
         titleLabel.text = name
         
         tableView.delegate = self
-        tableView.dataSource = self 
+        tableView.dataSource = self
+        
+        backButton.isHidden = true
+        backButton.isEnabled = false
         
         NetworkManager.fetchCategory { (category) in
             self.categories = category
@@ -47,6 +51,19 @@ class CategoryController: UIViewController {
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         
     }
+    
+    @IBAction func backTapped(_ sender: UIButton) {
+        if !subcategories.isEmpty{
+            DispatchQueue.main.async {
+                self.backButton.isHidden = true
+                self.backButton.isEnabled = false
+                self.titleLabel.text = self.name
+                self.subcategories.removeAll()
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 
 }
 
@@ -84,13 +101,22 @@ extension CategoryController: UITableViewDataSource, UITableViewDelegate {
         
         let category = categories[indexPath.row]
         
-        if !category.subcategories.isEmpty {
+        if subcategories.isEmpty {
             DispatchQueue.main.async {
-                self.name = category.name
-                self.subcategories = category.subcategories
+                
+                self.backButton.isHidden = false
+                self.backButton.isEnabled = true
+                self.titleLabel.text = category.name
+                
+                if !category.subcategories.isEmpty{
+                    self.subcategories.append(contentsOf: category.subcategories)
+                } else {
+                    self.performSegue(withIdentifier: "ListSegue", sender: self)
+                }
+                
                 self.tableView.reloadData()
             }
-        } else if !subcategories.isEmpty{
+        } else{
             performSegue(withIdentifier: "ListSegue", sender: self)
         }
         
@@ -98,3 +124,5 @@ extension CategoryController: UITableViewDataSource, UITableViewDelegate {
     
     
 }
+
+

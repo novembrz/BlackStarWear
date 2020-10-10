@@ -6,20 +6,7 @@
 //
 
 import Foundation
-//let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-//if let jsonDict = json as? NSDictionary{
-//
-//    DispatchQueue.main.async {
-//        var categories: [CategoriesData] = []
-//
-//        for (_, data) in jsonDict where data is NSDictionary{
-//            if let category = CategoriesData(data: data as! NSDictionary){
-//                categories.append(category)
-//            }
-//        }
-//        completion(categories)
-//    }
-//}
+
 class CategoriesData {
     
     let name: String

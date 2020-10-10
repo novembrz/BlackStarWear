@@ -14,8 +14,7 @@
 		C22685192520BF10004BCFF2 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22685182520BF10004BCFF2 /* CategoryController.swift */; };
 		C2270FCA2520BB5600A6A659 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2270FC92520BB5600A6A659 /* CategoryCell.swift */; };
 		C228F91F252208D600A37E72 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C228F91E252208D600A37E72 /* ProductCell.swift */; };
-		C23C6A312520F629002C8088 /* ClothingTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C6A302520F629002C8088 /* ClothingTypeController.swift */; };
-		C23C6A412520FD64002C8088 /* ClothingTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C6A402520FD64002C8088 /* ClothingTypeCell.swift */; };
+		C2300724253087EB00D5E30F /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2300723253087EB00D5E30F /* ProductData.swift */; };
 		C23C6A5125210B32002C8088 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C6A5025210B32002C8088 /* UIColor.swift */; };
 		C23C6A5625210D60002C8088 /* ProductCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23C6A5525210D60002C8088 /* ProductCartController.swift */; };
 		C245B025252C96FD001FEB5B /* ProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C245B024252C96FD001FEB5B /* ProductImageCell.swift */; };
@@ -28,7 +27,6 @@
 		C269C819251E86820051EAB2 /* BlackStarWearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269C818251E86820051EAB2 /* BlackStarWearTests.swift */; };
 		C269C824251E86820051EAB2 /* BlackStarWearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269C823251E86820051EAB2 /* BlackStarWearUITests.swift */; };
 		C2B8D6FF2529D379006548F5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8D6FE2529D379006548F5 /* NetworkManager.swift */; };
-		C2CD4B05252E0E9F00670D42 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CD4B04252E0E9F00670D42 /* CategoriesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +54,7 @@
 		C22685182520BF10004BCFF2 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		C2270FC92520BB5600A6A659 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		C228F91E252208D600A37E72 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		C23C6A302520F629002C8088 /* ClothingTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingTypeController.swift; sourceTree = "<group>"; };
-		C23C6A402520FD64002C8088 /* ClothingTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingTypeCell.swift; sourceTree = "<group>"; };
+		C2300723253087EB00D5E30F /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
 		C23C6A5025210B32002C8088 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		C23C6A5525210D60002C8088 /* ProductCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCartController.swift; sourceTree = "<group>"; };
 		C245B024252C96FD001FEB5B /* ProductImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCell.swift; sourceTree = "<group>"; };
@@ -76,7 +73,6 @@
 		C269C823251E86820051EAB2 /* BlackStarWearUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackStarWearUITests.swift; sourceTree = "<group>"; };
 		C269C825251E86820051EAB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2B8D6FE2529D379006548F5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		C2CD4B04252E0E9F00670D42 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +105,7 @@
 			children = (
 				C2B8D6FE2529D379006548F5 /* NetworkManager.swift */,
 				C2253B342523640D008AA0DC /* CategoriesData.swift */,
-				C2CD4B04252E0E9F00670D42 /* CategoriesModel.swift */,
-				C2CD4B03252E0E7B00670D42 /* New Group */,
+				C2300723253087EB00D5E30F /* ProductData.swift */,
 			);
 			path = "Network Service";
 			sourceTree = "<group>";
@@ -119,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				C2270FC92520BB5600A6A659 /* CategoryCell.swift */,
-				C23C6A402520FD64002C8088 /* ClothingTypeCell.swift */,
 				C228F91E252208D600A37E72 /* ProductCell.swift */,
 				C245B024252C96FD001FEB5B /* ProductImageCell.swift */,
 				C2253B28252354BA008AA0DC /* ShopingCell.swift */,
@@ -147,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				C22685182520BF10004BCFF2 /* CategoryController.swift */,
-				C23C6A302520F629002C8088 /* ClothingTypeController.swift */,
 				C2253B1B25233601008AA0DC /* ListViewController.swift */,
 				C23C6A5525210D60002C8088 /* ProductCartController.swift */,
 				C2253B232523532E008AA0DC /* ShopingCartController.swift */,
@@ -225,13 +218,6 @@
 				C269C825251E86820051EAB2 /* Info.plist */,
 			);
 			path = BlackStarWearUITests;
-			sourceTree = "<group>";
-		};
-		C2CD4B03252E0E7B00670D42 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,14 +357,12 @@
 				C2B8D6FF2529D379006548F5 /* NetworkManager.swift in Sources */,
 				C245B025252C96FD001FEB5B /* ProductImageCell.swift in Sources */,
 				C269C7FF251E86810051EAB2 /* AppDelegate.swift in Sources */,
-				C23C6A312520F629002C8088 /* ClothingTypeController.swift in Sources */,
-				C23C6A412520FD64002C8088 /* ClothingTypeCell.swift in Sources */,
 				C269C801251E86810051EAB2 /* SceneDelegate.swift in Sources */,
 				C2270FCA2520BB5600A6A659 /* CategoryCell.swift in Sources */,
 				C2253B242523532E008AA0DC /* ShopingCartController.swift in Sources */,
 				C2253B1C25233601008AA0DC /* ListViewController.swift in Sources */,
+				C2300724253087EB00D5E30F /* ProductData.swift in Sources */,
 				C2253B29252354BA008AA0DC /* ShopingCell.swift in Sources */,
-				C2CD4B05252E0E9F00670D42 /* CategoriesModel.swift in Sources */,
 				C23C6A5125210B32002C8088 /* UIColor.swift in Sources */,
 				C2253B352523640D008AA0DC /* CategoriesData.swift in Sources */,
 			);
