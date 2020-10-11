@@ -37,10 +37,22 @@ class ProductCell: UICollectionViewCell {
         self.layer.cornerRadius = 4
         self.clipsToBounds = true
         
-        productName.text = "ProductCell"
-        productPrice.text = "1 999 руб."
+    }
+    
+    
+    func configureCell(model: ProductData){
         
-        productImageView.image = #imageLiteral(resourceName: "9t0a8451-450x600-k90")
+        productName.text = model.name
+        productPrice.text = model.price
+        
+        DispatchQueue.global().async {
+            guard let imageURL = URL(string: "http://blackstarshop.ru/\(model.mainImage)") else {return}
+            guard let imageData = try? Data(contentsOf: imageURL) else {return}
+
+            DispatchQueue.main.async {
+                self.productImageView.image = UIImage(data: imageData)
+            }
+        }
     }
     
     

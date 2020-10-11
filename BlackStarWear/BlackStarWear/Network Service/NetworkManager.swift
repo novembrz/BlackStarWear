@@ -40,22 +40,39 @@ struct NetworkManager {
         task.resume()
     }
     
-    static func downloadImage(urlString: String, completion: @escaping (UIImage) -> ()){
+    
+    static func fetchProducts(id: String, completion: @escaping ([ProductData]) -> ()){
         
+        let urlString = "http://blackstarshop.ru/index.php?route=api/v1/products&cat_id=\(id)"
         guard let url = URL(string: urlString) else {return}
         
         let session = URLSession.shared
         let task = session.dataTask(with: url) { (data, response, error) in
-            if let data = data, let image = UIImage(data: data){
-                completion(image)
+            
+            guard let data = data else {return}
+            
+            do{
+                let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                print(json)
+                if let jsonDict = json as? NSDictionary{
+                    DispatchQueue.main.async {
+                        var products: [ProductData] = []
+                        
+                        for (_, data) in jsonDict where data is NSDictionary{
+                            if let product = ProductData(data: data as! NSDictionary){
+                                
+                                products.append(product)
+                            }
+                        }
+                        completion(products)
+                    }
+                }
+            }catch{
+                print(error.localizedDescription)
             }
         }
         task.resume()
     }
-    
-    static func fetchProducts(id: String){
-        let urlString = "http://blackstarshop.ru/index.php?route=api/v1/products&cat_id=\(id)"
-    }
-    
+   
    
 }

@@ -11,10 +11,12 @@ class CategoryCell: UITableViewCell {
 
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,31 +26,38 @@ class CategoryCell: UITableViewCell {
     }
     
     func configureCell(model: CategoriesData){
-        categoryLabel.text = model.name
         
-        DispatchQueue.main.async {
-            NetworkManager.downloadImage(urlString: model.imageURL) { (image) in
-                self.categoryImageView.image = image
+        categoryLabel.text = model.name
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
+        DispatchQueue.global().async {
+            guard let imageURL = URL(string: "http://blackstarshop.ru/\(model.imageURL)") else {return}
+            guard let imageData = try? Data(contentsOf: imageURL) else {return}
+
+            DispatchQueue.main.async {
+                self.categoryImageView.image = UIImage(data: imageData) ?? #imageLiteral(resourceName: "9t0a8451-450x600-k90")
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
             }
         }
- 
-        
-//        DispatchQueue.global().async {
-//            guard let imageURL = URL(string: model.imageURL) else {return}
-//            guard let imageData = try? Data(contentsOf: imageURL) else {return}
-//
-//            DispatchQueue.main.async {
-//                self.categoryImageView.image = UIImage(data: imageData) ?? #imageLiteral(resourceName: "Str")
-//            }
-//        }
         
     }
     
     func configureSubCell(model: Subcategories){
+        
         categoryLabel.text = model.name
-        DispatchQueue.main.async {
-            NetworkManager.downloadImage(urlString: model.iconImage ?? "https://i.pinimg.com/736x/64/60/06/64600608ad20b2a248c0b75f0ece6d52.jpg") { (image) in
-                self.categoryImageView.image = image
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
+        DispatchQueue.global().async {
+            guard let imageURL = URL(string: "http://blackstarshop.ru/\(String(describing: model.iconImage))") else {return}
+            guard let imageData = try? Data(contentsOf: imageURL) else {return}
+
+            DispatchQueue.main.async {
+                self.categoryImageView.image = UIImage(data: imageData) ?? #imageLiteral(resourceName: "9t0a8451-450x600-k90")
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
             }
         }
     }

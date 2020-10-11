@@ -30,8 +30,8 @@ class CategoryController: UIViewController {
         backButton.isHidden = true
         backButton.isEnabled = false
         
-        NetworkManager.fetchCategory { (category) in
-            self.categories = category
+        NetworkManager.fetchCategory { (categories) in
+            self.categories = categories
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -42,15 +42,23 @@ class CategoryController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if let listVC = segue.destination as? ListViewController, segue.identifier == "ListSegue" {
-            
-        }
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "ListSegue" else { return }
+        
+        let indexPath = tableView.indexPathForSelectedRow!
+        let navigaionVC = segue.destination as! UINavigationController
+        let productVC = navigaionVC.topViewController as! ListViewController
+        
+        let sub = subcategories[indexPath.row]
+        productVC.id = sub.id
+        productVC.title = sub.name
     }
+    
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue) {
         
     }
+    
     
     @IBAction func backTapped(_ sender: UIButton) {
         if !subcategories.isEmpty{
