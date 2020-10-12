@@ -43,7 +43,7 @@ class ProductCell: UICollectionViewCell {
     func configureCell(model: ProductData){
         
         productName.text = model.name
-        productPrice.text = model.price
+        productPrice.text = "\(model.price) руб."
         
         DispatchQueue.global().async {
             guard let imageURL = URL(string: "http://blackstarshop.ru/\(model.mainImage)") else {return}

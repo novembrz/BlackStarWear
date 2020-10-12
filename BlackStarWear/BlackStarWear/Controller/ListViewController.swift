@@ -17,6 +17,9 @@ class ListViewController: UIViewController {
     var products: [ProductData] = []
     var selectedProduct: ProductData?
     
+    let shopingVC = ShopingCartController()
+    let productVC = ProductCartController()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,9 @@ class ListViewController: UIViewController {
                 self.activityIndicator.isHidden = true
             }
         }
+        
+        shopingVC.delegate = self
+        productVC.delegate = self
         
     }
     
@@ -95,6 +101,19 @@ extension ListViewController {
         
         return layout
         
+    }
+    
+}
+
+// MARK: - ListNavigatingDelegate
+
+extension ListViewController: ListNavigatingDelegate {
+    func toShopingCart() {
+        present(shopingVC, animated: true, completion: nil)
+    }
+    
+    func toProductCart() {
+        present(productVC, animated: true, completion: nil)
     }
     
 }

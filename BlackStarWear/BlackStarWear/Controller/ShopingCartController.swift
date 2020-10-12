@@ -10,14 +10,16 @@ import UIKit
 class ShopingCartController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mainButton: UIButton!
     
-    @IBOutlet weak var shopingButton: UIButton!
+    weak var delegate: ListNavigatingDelegate?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        shopingButton.layer.borderWidth = 1.2
-        shopingButton.layer.borderColor = UIColor.white.cgColor
+        mainButton.layer.borderWidth = 1.2
+        mainButton.layer.borderColor = UIColor.white.cgColor
         
         tableView.delegate = self
         tableView.dataSource = self

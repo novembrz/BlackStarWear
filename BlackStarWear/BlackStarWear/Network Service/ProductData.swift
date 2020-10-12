@@ -8,12 +8,13 @@
 import Foundation
 
 class ProductData{
+    
     let name: String
     let sortOrder: Int
     let description: String
     let mainImage: String //  главная фотка
     let colorName: String
-    let price: String
+    let price: Double
     var productImages: [ProductImages] // array with dict
     var offers: [Offers] // array with dict
     
@@ -34,7 +35,7 @@ class ProductData{
         self.description = description
         self.mainImage = mainImage
         self.colorName = colorName
-        self.price = price
+        self.price = Double(price)?.rounded(digits: 0) ?? 0
         
         self.offers = []
         self.productImages = []

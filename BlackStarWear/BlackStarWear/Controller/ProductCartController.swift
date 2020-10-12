@@ -13,9 +13,14 @@ class ProductCartController: UIViewController {
     @IBOutlet weak var addProductButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    
     var product: ProductData!
     var stringArray: [String] = []
-
+    var imageData = Data()
+    
+    private var productsList = RealmManager.productsList
+    
+    weak var delegate: ListNavigatingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,19 +34,26 @@ class ProductCartController: UIViewController {
         collectionView.dataSource = self
         
         guard let product = product else {return}
-        priceLabel.text = product.price
+        priceLabel.text = "\(product.price) руб."
         title = product.name
         getImageString()
         
     }
     
     private func getImageString(){
-        if !product.productImages.isEmpty{
+        if !product.productImages.isEmpty {
             for dict in product.productImages {
                 self.stringArray.append("http://blackstarshop.ru/\(dict.imageURL)")
             }
         } else {
             self.stringArray.append("http://blackstarshop.ru/\(product.mainImage)")
+        }
+    }
+    
+    
+    @IBAction func shopingTapped(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true) {
+            self.delegate?.toShopingCart()
         }
     }
     
@@ -53,7 +65,8 @@ class ProductCartController: UIViewController {
         for dict in product.offers{
             if dict.quantity != "0" {
                 let addAction = UIAlertAction(title: dict.size, style: .default) { (action) in
-                    
+                    self.addProduct(with: dict.size)
+                    self.successAlert()
                 }
                 alert.addAction(addAction)
             }
@@ -65,6 +78,26 @@ class ProductCartController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    private func addProduct(with size: String){
+        let addedProduct = ProductModel(name: product.name, price: product.price, size: size, imageData: imageData)
+        RealmManager.saveObject(addedProduct)
+    }
+    
+    private func successAlert(){
+        let alert = UIAlertController(title: "Успешно!", message: "Вы добавили товар в корзину!", preferredStyle: .alert)
+        let shopingAction = UIAlertAction(title: "Перейти к корзине", style: .default) { (action) in
+            self.dismiss(animated: true) {
+                self.delegate?.toShopingCart()
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Назад", style: .cancel, handler: nil)
+        
+        alert.addAction(shopingAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
 
 }
@@ -83,6 +116,7 @@ extension ProductCartController: UICollectionViewDelegate, UICollectionViewDataS
         
         let stringUrl = stringArray[indexPath.item]
         cell.addImage(url: stringUrl)
+        self.imageData = cell.imageData
         
         return cell
     }

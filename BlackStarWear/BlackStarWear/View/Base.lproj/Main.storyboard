@@ -293,7 +293,14 @@
                             <constraint firstItem="HhL-Ml-C3Y" firstAttribute="centerX" secondItem="0sh-Iv-AfR" secondAttribute="centerX" id="z4x-vB-2EK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Футболка Пандемия" id="OpH-Tb-gig"/>
+                    <navigationItem key="navigationItem" title="Футболка Пандемия" id="OpH-Tb-gig">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-сумка-для-покупок-36" style="plain" id="rdw-e5-q0Y">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="shopingTapped:" destination="fcV-mC-MVv" id="nfj-0h-UR0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addProductButton" destination="Jw3-7c-GYH" id="oEf-AP-1E2"/>
                         <outlet property="collectionView" destination="HhL-Ml-C3Y" id="050-EJ-QcZ"/>
@@ -449,13 +456,13 @@
                         <barButtonItem key="backBarButtonItem" title="Назад" id="Bhp-Hv-afd"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="shopingButton" destination="sCv-QI-0Cj" id="Bgz-Dc-wU9"/>
+                        <outlet property="mainButton" destination="sCv-QI-0Cj" id="Bgz-Dc-wU9"/>
                         <outlet property="tableView" destination="TfG-3J-cT9" id="HvA-er-Bfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxB-HR-DD8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3267" y="858"/>
+            <point key="canvasLocation" x="3604" y="929"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7RW-Wp-S50">
