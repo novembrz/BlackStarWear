@@ -47,12 +47,19 @@ class ProductCartController: UIViewController {
     
     
     @IBAction func addProductTapped(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Выберите размер", message: "", preferredStyle: .actionSheet)
-        let addAction = UIAlertAction(title: "ДОБАВИТЬ", style: .default) { (action) in
-        }
-        let cancelAction = UIAlertAction(title: "Назад", style: .cancel, handler: nil)
         
-        alert.addAction(addAction)
+        let alert = UIAlertController(title: "Выберите размер", message: "", preferredStyle: .actionSheet)
+        
+        for dict in product.offers{
+            if dict.quantity != "0" {
+                let addAction = UIAlertAction(title: dict.size, style: .default) { (action) in
+                    
+                }
+                alert.addAction(addAction)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Назад", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)

@@ -1,0 +1,6 @@
+framework module Pods_BlackStarWearTests {
+  umbrella header "Pods-BlackStarWearTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
