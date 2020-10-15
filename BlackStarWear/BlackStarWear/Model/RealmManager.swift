@@ -26,6 +26,12 @@ class RealmManager {
             realm.delete(product)
         }
     }
+    
+    static func deleteAll(_ product: Results<ProductModel>) {
+        try! realm.write {
+            realm.delete(product)
+        }
+    }
 }
 
 

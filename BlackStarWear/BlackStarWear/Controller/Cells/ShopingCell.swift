@@ -26,5 +26,18 @@ class ShopingCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func configureCell(model: ProductModel){
+        nameLabel.text = model.name
+        sizeLabel.text = model.size
+        priceLabel.text = "\(model.price) руб."
+        colorLabel.text = model.color
+        
+        DispatchQueue.main.async {
+            guard let stringURL = URL(string: model.image) else {return}
+            guard let imageData = try? Data(contentsOf: stringURL) else {return}
+            self.productImageView.image = UIImage(data: imageData)
+        }
+    }
+    
 }

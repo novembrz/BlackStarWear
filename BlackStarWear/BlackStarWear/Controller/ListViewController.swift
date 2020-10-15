@@ -42,8 +42,6 @@ class ListViewController: UIViewController {
             }
         }
         
-        shopingVC.delegate = self
-        productVC.delegate = self
         
     }
     
@@ -101,19 +99,6 @@ extension ListViewController {
         
         return layout
         
-    }
-    
-}
-
-// MARK: - ListNavigatingDelegate
-
-extension ListViewController: ListNavigatingDelegate {
-    func toShopingCart() {
-        present(shopingVC, animated: true, completion: nil)
-    }
-    
-    func toProductCart() {
-        present(productVC, animated: true, completion: nil)
     }
     
 }

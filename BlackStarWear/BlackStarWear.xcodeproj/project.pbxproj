@@ -31,8 +31,8 @@
 		C28126CC253474E2002D9084 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28126CB253474E2002D9084 /* RealmManager.swift */; };
 		C28126D1253474F4002D9084 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28126D0253474F4002D9084 /* ProductModel.swift */; };
 		C28126DB25347868002D9084 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28126DA25347868002D9084 /* Double.swift */; };
-		C28126E1253485A2002D9084 /* NavigationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28126E0253485A2002D9084 /* NavigationProtocol.swift */; };
 		C2B8D6FF2529D379006548F5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8D6FE2529D379006548F5 /* NetworkManager.swift */; };
+		C2CBC6F1253615AB00343C6D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CBC6F0253615AB00343C6D /* UIButton.swift */; };
 		E1F4ADD646AFA05619056E0F /* Pods_BlackStarWearUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D11240BEF83C57D70CA6AF9E /* Pods_BlackStarWearUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,8 +87,8 @@
 		C28126CB253474E2002D9084 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		C28126D0253474F4002D9084 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		C28126DA25347868002D9084 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		C28126E0253485A2002D9084 /* NavigationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationProtocol.swift; sourceTree = "<group>"; };
 		C2B8D6FE2529D379006548F5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C2CBC6F0253615AB00343C6D /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		D11240BEF83C57D70CA6AF9E /* Pods_BlackStarWearUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackStarWearUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B9E812D8B79074AAF07BF5 /* Pods_BlackStarWearTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackStarWearTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE91C99E085BE8D9D71369B0 /* Pods-BlackStarWear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackStarWear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlackStarWear/Pods-BlackStarWear.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +200,7 @@
 		C23C6A4F25210B14002C8088 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C2CBC6F0253615AB00343C6D /* UIButton.swift */,
 				C23C6A5025210B32002C8088 /* UIColor.swift */,
 				C28126DA25347868002D9084 /* Double.swift */,
 			);
@@ -237,7 +238,6 @@
 				C2270FD12520BC1900A6A659 /* Model */,
 				C2270FD22520BC3000A6A659 /* View */,
 				C2270FD32520BC3600A6A659 /* Controller */,
-				C28126DF25348580002D9084 /* Protocols */,
 				C23C6A4F25210B14002C8088 /* Extensions */,
 				C2270FD42520BC4100A6A659 /* Supporting files */,
 			);
@@ -260,14 +260,6 @@
 				C269C825251E86820051EAB2 /* Info.plist */,
 			);
 			path = BlackStarWearUITests;
-			sourceTree = "<group>";
-		};
-		C28126DF25348580002D9084 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				C28126E0253485A2002D9084 /* NavigationProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		D6509611CC4DC7122D011E2C /* Frameworks */ = {
@@ -506,8 +498,8 @@
 				C2253B1C25233601008AA0DC /* ListViewController.swift in Sources */,
 				C2300724253087EB00D5E30F /* ProductData.swift in Sources */,
 				C2253B29252354BA008AA0DC /* ShopingCell.swift in Sources */,
+				C2CBC6F1253615AB00343C6D /* UIButton.swift in Sources */,
 				C23C6A5125210B32002C8088 /* UIColor.swift in Sources */,
-				C28126E1253485A2002D9084 /* NavigationProtocol.swift in Sources */,
 				C28126DB25347868002D9084 /* Double.swift in Sources */,
 				C2253B352523640D008AA0DC /* CategoriesData.swift in Sources */,
 			);

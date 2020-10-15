@@ -13,6 +13,7 @@ class ProductImageCell: UICollectionViewCell {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var imageData = Data()
+    var urlString = ""
     
     override func prepareForReuse() { // для переиспользования ячейки, когда картинка подгружается с ервера, то она иногда не успевает поменятся в ячейке  поэтому мы обнуляем
         super.prepareForReuse()
@@ -28,6 +29,7 @@ class ProductImageCell: UICollectionViewCell {
             guard let urlString = URL(string: url) else {return}
             guard let imageData = try? Data(contentsOf: urlString) else {return}
             self.imageData = imageData
+            self.urlString = url
             DispatchQueue.main.async {
                 self.imageView.image = UIImage(data: imageData)
                 self.activityIndicator.stopAnimating()

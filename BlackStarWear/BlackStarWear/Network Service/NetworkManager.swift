@@ -53,7 +53,6 @@ struct NetworkManager {
             
             do{
                 let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                print(json)
                 if let jsonDict = json as? NSDictionary{
                     DispatchQueue.main.async {
                         var products: [ProductData] = []
@@ -67,7 +66,7 @@ struct NetworkManager {
                         completion(products)
                     }
                 }
-            }catch{
+            }catch {
                 print(error.localizedDescription)
             }
         }

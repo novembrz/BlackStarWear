@@ -12,6 +12,7 @@ class CategoryCell: UITableViewCell {
     @IBOutlet weak var categoryImageView: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var labelTrConstraints: NSLayoutConstraint!
     
     
     override func awakeFromNib() {
@@ -50,16 +51,15 @@ class CategoryCell: UITableViewCell {
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
-        DispatchQueue.global().async {
-            guard let imageURL = URL(string: "http://blackstarshop.ru/\(String(describing: model.iconImage))") else {return}
+        DispatchQueue.main.async {
+            guard let imageURL = URL(string: "http://blackstarshop.ru/\(model.iconImage ?? "")") else {return}
             guard let imageData = try? Data(contentsOf: imageURL) else {return}
-
-            DispatchQueue.main.async {
-                self.categoryImageView.image = UIImage(data: imageData) ?? #imageLiteral(resourceName: "9t0a8451-450x600-k90")
-                self.activityIndicator.stopAnimating()
-                self.activityIndicator.isHidden = true
-            }
+            self.categoryImageView.image = UIImage(data: imageData) ?? #imageLiteral(resourceName: "9t0a8451-450x600-k90")
+            
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
         }
+        
     }
     
 

@@ -46,12 +46,15 @@ class CategoryController: UIViewController {
         guard segue.identifier == "ListSegue" else { return }
         
         let indexPath = tableView.indexPathForSelectedRow!
-        let navigaionVC = segue.destination as! UINavigationController
-        let productVC = navigaionVC.topViewController as! ListViewController
+        let productVC = segue.destination as! ListViewController
         
-        let sub = subcategories[indexPath.row]
-        productVC.id = sub.id
-        productVC.title = sub.name
+        if !subcategories.isEmpty {
+            let sub = subcategories[indexPath.row]
+            productVC.id = sub.id
+            productVC.title = sub.name
+        } else {
+            createAlert()
+        }
     }
     
     
@@ -70,6 +73,14 @@ class CategoryController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    private func createAlert(){
+        let alert = UIAlertController(title: "Извините!", message: "На данный момент в этом разделе нет товаров!", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Назад", style: .cancel, handler: nil)
+        
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
 
@@ -95,6 +106,15 @@ extension CategoryController: UITableViewDataSource, UITableViewDelegate {
         
         if !subcategories.isEmpty {
             let sub = subcategories[indexPath.row]
+            view.layoutIfNeeded()
+            cell.labelTrConstraints.constant = 0
+            
+            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                cell.categoryLabel.frame.origin.x = 500
+                cell.labelTrConstraints.constant = 52
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+            
             cell.configureSubCell(model: sub)
         } else {
             let category = categories[indexPath.row]

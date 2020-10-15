@@ -13,14 +13,13 @@ class ProductCartController: UIViewController {
     @IBOutlet weak var addProductButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     var product: ProductData!
     var stringArray: [String] = []
     var imageData = Data()
+    var urlString = ""
+    let shopingVC = ShopingCartController()
     
     private var productsList = RealmManager.productsList
-    
-    weak var delegate: ListNavigatingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,13 +50,6 @@ class ProductCartController: UIViewController {
     }
     
     
-    @IBAction func shopingTapped(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true) {
-            self.delegate?.toShopingCart()
-        }
-    }
-    
-    
     @IBAction func addProductTapped(_ sender: UIButton) {
         
         let alert = UIAlertController(title: "Выберите размер", message: "", preferredStyle: .actionSheet)
@@ -79,23 +71,16 @@ class ProductCartController: UIViewController {
     }
     
     private func addProduct(with size: String){
-        let addedProduct = ProductModel(name: product.name, price: product.price, size: size, imageData: imageData)
+        let addedProduct = ProductModel(name: product.name, price: product.price, size: size, image: stringArray[0], color: product.colorName)
+        
         RealmManager.saveObject(addedProduct)
     }
     
     private func successAlert(){
         let alert = UIAlertController(title: "Успешно!", message: "Вы добавили товар в корзину!", preferredStyle: .alert)
-        let shopingAction = UIAlertAction(title: "Перейти к корзине", style: .default) { (action) in
-            self.dismiss(animated: true) {
-                self.delegate?.toShopingCart()
-            }
-        }
-        
         let cancelAction = UIAlertAction(title: "Назад", style: .cancel, handler: nil)
         
-        alert.addAction(shopingAction)
         alert.addAction(cancelAction)
-        
         present(alert, animated: true, completion: nil)
     }
     
